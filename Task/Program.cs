@@ -5,3 +5,36 @@
 // ["hello", "2", "world", ":-)"] -> ["2", ":-)"]
 // ["1234", "1567", "-2", "computer science"] -> ["-2"]
 // ["Russia", "Denmark", "Kazan"] -> []
+
+Console.Clear();
+
+int SelectionArray(string[] Array)
+{
+    int count = 0;
+    for (int i = 0; i < Array.Length; i++)
+    {
+        if (Array[i].Length <= 3) count++;
+    }
+    return count;
+}
+
+string[] FillFinalArray(string[] Array, int count)
+{
+string[] result = new string[count];
+for (int i = 0; i < Array.Length; i++)
+{
+    if (Array[i].Length <= 3)
+    {
+        result[result.Length - count] = Array[i];
+            count--;
+    }
+}
+return result;
+}
+
+string[] Array1 = {"hello", "2", "world", ":-)", "77"};
+Console.Write(string.Join(", ", Array1));
+Console.Write("   -->   ");
+int Selection = SelectionArray(Array1);
+string[] FinalArray = FillFinalArray(Array1,Selection);
+Console.Write(string.Join(", ", FinalArray));
