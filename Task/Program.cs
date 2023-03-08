@@ -32,9 +32,9 @@ for (int i = 0; i < Array.Length; i++)
 return result;
 }
 
-string[] Array1 = {"hello", "2", "world", ":-)", "77"};
-Console.Write(string.Join(", ", Array1));
+string[] Array = {"hello", "2", "world", ":-)", "77"};
+Console.Write(string.Join(", ", Array));
 Console.Write("   -->   ");
-int Selection = SelectionArray(Array1);
-string[] FinalArray = FillFinalArray(Array1,Selection);
+int Selection = SelectionArray(Array);
+string[] FinalArray = FillFinalArray(Array,Selection);
 Console.Write(string.Join(", ", FinalArray));
